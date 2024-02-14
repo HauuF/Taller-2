@@ -32,26 +32,39 @@ int main() {
 
 
 string removeBlankSpacesFromString(string line) {
-    
-    //TODO: Implement this function to remove blank spaces from a string
-    //See how regex_replace works in https://en.cppreference.com/w/cpp/regex/regex_replace
-    return "";
+    //escape DSW; \\s+ en https://learn.microsoft.com/es-es/cpp/standard-library/regular-expressions-cpp?view=msvc-170 
+    regex espacio("\\s+");
+    line = regex_replace(line, espacio, "");
+    return line;
 
 }
 
 bool isPalindrome(string line) {
-    //TODO: Implement this function to check if a string is palindrome
-    //It could be useful to use the function removeBlankSpacesFromString
-    //Also, you can use the tolower function to convert a character to lowercase
-    //https://www.geeksforgeeks.org/tolower-function-in-cpp/
-
-
+    for(auto& line:line){
+        (char)tolower(line); 
+    } 
+    regex espacio("\\s+");
+    line = regex_replace(line, espacio, "");
+    //https://cplusplus.com/reference/string/string/
+        if(line == string(line.rbegin(), line.rend())){
+            return true;
+        }else{
+            return false;
+        }
+    
     return false;
 }
 
 int countPalindromes(List<string> lines) {
-    //TODO: Implement this function to count palindromes in a list of strings
-    return 0;
+    char palos;
+   int palindromos = 0;
+   for(int i = 0; i < lines.size(); i++){
+    palos = lines.size(i);
+        if(palos == lines.size() - 1){
+            palindromos++;
+        }
+   }
+    return palindromos;
 }
 
 void testRemoveBlankSpacesFromString() {
