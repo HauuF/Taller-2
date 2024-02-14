@@ -23,8 +23,12 @@ int main() {
 }
 
 string encryptOrDecrypt(string line) {
-    //TODO: Implement this function to encrypt or decrypt a string
-    return "";
+    string traduccion;
+    for(int i = 0; i < testEncryptOrDecrypt.size(); i++){
+       testEncryptOrDecrypt[i] == decryptEntireMessage[i];
+       traduccion[i] = testEncryptOrDecrypt[i];
+    }
+    return traduccion;
 }
 
 void testEncryptOrDecrypt() {
