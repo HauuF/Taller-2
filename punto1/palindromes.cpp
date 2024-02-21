@@ -40,8 +40,8 @@ string removeBlankSpacesFromString(string line) {
 }
 
 bool isPalindrome(string line) {
-    for(auto& line:line){
-        (char)tolower(line); 
+    for (char &minus : line) {
+        minus = tolower(minus);
     } 
     regex espacio("\\s+");
     line = regex_replace(line, espacio, "");
@@ -56,15 +56,15 @@ bool isPalindrome(string line) {
 }
 
 int countPalindromes(List<string> lines) {
-    char palos;
-   int palindromos = 0;
-   for(int i = 0; i < lines.size(); i++){
-    palos = lines.size(i);
-        if(palos == lines.size() - 1){
-            palindromos++;
+    int count = 0;
+    string line;
+    for(int i = 0; i < lines.size; i++){
+        line = lines.get(i);
+        if(isPalindrome(line)){
+            count++;
         }
-   }
-    return palindromos;
+    }
+    return count;
 }
 
 void testRemoveBlankSpacesFromString() {
