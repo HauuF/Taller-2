@@ -21,13 +21,11 @@ int main() {
 }
 
 List<string> split(string line, char delimiter) {
-    //https://cplusplus.com/reference/string/string/replace/
     List<string> tokens;
-    string palabra;
+    string comas;
     stringstream ss(line);
-    while(getline(ss, palabra, delimiter)) {
-    palabra.replace(palabra.find(delimiter), 1, " ");
-    tokens.add(palabra);
+    while(getline(ss, comas, delimiter)) {
+    tokens.add(comas);  
     }
     return tokens;
 }
