@@ -23,10 +23,17 @@ int main() {
 }
 
 string encryptOrDecrypt(string line) {
-    string traduccion;
-    for(int i = 0; i < testEncryptOrDecrypt.size(); i++){
-       testEncryptOrDecrypt[i] == decryptEntireMessage[i];
-       traduccion[i] = testEncryptOrDecrypt[i];
+    // && = AND, || = OR, https://www.techiedelight.com/es/convert-a-char-to-ascii-in-cpp/
+    string traduccion = "";
+    for(int i = 0; i < line.length(); i++) {
+        char c = line[i];
+        if(c >= 'a' && c <= 'z') {
+            traduccion += 'z' - (c - 'a');
+        } else if(c >= 'A' && c <= 'Z') {
+            traduccion += 'Z' - (c - 'A');  
+        } else {
+            traduccion += c;
+        }
     }
     return traduccion;
 }
