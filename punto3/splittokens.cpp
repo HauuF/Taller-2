@@ -21,8 +21,14 @@ int main() {
 }
 
 List<string> split(string line, char delimiter) {
+    //https://cplusplus.com/reference/string/string/replace/
     List<string> tokens;
-    //TODO: Implement this function to split a string into a list of string tokens
+    string palabra;
+    stringstream ss(line);
+    while(getline(ss, palabra, delimiter)) {
+    palabra.replace(palabra.find(delimiter), 1, " ");
+    tokens.add(palabra);
+    }
     return tokens;
 }
 
